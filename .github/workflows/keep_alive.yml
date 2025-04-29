@@ -1,0 +1,10 @@
+name: Keep Render Service Alive
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+jobs:
+  ping-render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render
+        run: curl -X GET "https://render-telegram-bot-823k.onrender.com"
